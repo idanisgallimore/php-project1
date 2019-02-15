@@ -16,7 +16,11 @@
     <?php 
         // include("includes/nav.php");
         if(!isset($_REQUEST["page"])){
-            include("includes/main.inc.php");
+            if(isset($_SESSION["user"])){
+                include("includes/dashboard.inc.php");
+            }else{
+                include("includes/main.inc.php");
+            }
         }else{
             $pageName = $_REQUEST["page"];
             $nextPage = "includes/$pageName.inc.php";

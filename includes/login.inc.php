@@ -11,7 +11,7 @@
     }elseif($result){
         $_SESSION["user"] = $email;
         // echo $_SESSION["user"];
-        header('Location: index.php?page=loginConfirm');
+        header('Location: index.php?page=dashboard');
     }
 
 ?>

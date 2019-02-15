@@ -29,7 +29,7 @@ if(!$badUser == 1){
     $query = "INSERT INTO ms_users(name, email, password) VALUES('$name', '$email', '$password')";
     $result = mysqli_query($con, $query);
     if($result){
-        header('Location: index.php?page=confirmation');
+        header('Location: index.php?page=dashboard');
     }
 }
 ?>

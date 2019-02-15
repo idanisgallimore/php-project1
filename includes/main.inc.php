@@ -5,6 +5,9 @@
     <input type="hidden"  name="page" value="login"/>
     <input class="btn btn-yes" type="submit" value="login"/>
 </form> -->
+<?php 
+    include("includes/nav.php");
+?>
 <div class="container landing-container2">
     <div class="blt-pnts">
         <i class="fas fa-search"></i>
