@@ -1,0 +1,6 @@
+**Constants in php:
+    Constants are variables that cannot be overrided. 
+    use the define() function
+    it takes two parameters: 1.name of variable 2.data stored in variable
+-Name should be all caps. 
+-no dollar sign needed. 

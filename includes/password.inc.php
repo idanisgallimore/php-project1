@@ -1,0 +1,8 @@
+<?php 
+echo "<div class=\"msg-container fail-msg-container\">
+    <h2 class =\"fail-msg msg\">Password needs to be longer than 5 characters.</h2>
+    <a href=\"index.php?page=signup\" class=\"page-link\">Go back</a>
+</div>";
+
+
+?>
