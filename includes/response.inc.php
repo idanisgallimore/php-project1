@@ -1,3 +1,4 @@
+<?php include("nav.php");?>
 <?php 
     // $fromUser = $_GET['fromWhom'];
     include_once("library/getName.php");

@@ -27,5 +27,7 @@
             include($nextPage);
         }
       ?>
+      <!-- JS script -->
+      <script src="library/script.js"></script>
 </body>
 </html>

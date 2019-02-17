@@ -29,12 +29,11 @@ body{
 
 
 /* Navigation bar */
-nav{
+/* nav{
 	width: 100%;
 	height: 100px;
 	background-color: white;
-	border: solid black 1px; 
-}
+} */
 
 /* View Messages page */
 .msg-cont{
@@ -129,6 +128,97 @@ nav{
 		color: gray;
 		padding-left: 20px; 
 	}
-
+	/* dashboard page */
+	.dashboard-container{
+		margin-top: 50px;
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.link-cont{
+		width: 90vw;
+		margin-bottom: 3px; 
+		height: 150px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.dashb-link{
+		display: block;
+		width: 100%;
+		height: 100%;
+		color: white;
+	}
+	.link-text{
+		text-align: center;
+		margin-top: 20%; 
+		font-size: 20px;
+	}
+	.link-inbox{
+		background-color: #29B6F6;
+	}
+	.link-viewMsgs{
+		background-color: #E91E63;
+	}
+	.link-newMsg{
+		background-color: #8BC34A;
+	}
+	.link-userAcc{
+		background-color: #FFB300;
+	}
+	/* nav bar */
+	.btn-cont{
+		height: 100%;
+		width: 20%;
+		border-right: #FFCCBC  solid 1px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.btn-cont:hover{
+		cursor: pointer;
+	}
+	.fa-align-justify{
+		font-size: 30px;
+		color: #880E4F;
+	}
+	.nav-button{
+		height: 55px;
+		width: 100vw;
+		border-bottom: #FFCCBC  solid 1px;
+	}
+	nav{
+		display: none;
+		height: 50vh;
+		width: 50vw;
+		z-index: 1;
+		position: absolute;
+		font-size: 20px; 
+		text-align: center;
+		background-color: white;
+	}
+	.navli{
+		display: block;
+		margin-bottom: 10px; 
+		margin-top: 10px;
+	}
+	.ul-links{
+		color: black;
+	}
+	.underlinks{
+		display: flex;
+		flex-direction: column;
+		margin-top: 100px;
+		border-top: #FFCCBC  solid 1px;
+		padding-top: 10px; 
+	}
+	.unli{
+		color: #607D8B;
+	}
+	a{
+		text-decoration: none;
+	}
 }
    

@@ -1,18 +1,30 @@
+<div class="nav-button">
+    <div class="btn-cont">
+        <i class="fas fa-align-justify"></i>
+    </div>
+</div>
+
 <nav>
-    <a href="index.php?page=viewMsgs">View messages</a>
-    <a href="index.php?page=newMsg">Add new message</a>
-    <a href="index.php?page=signup">Sign Up</a>
-    <a href="index.php?page=updateUser">Update Info</a>
-
-    <a href="index.php">Home</a>
+    <ul class="navigation">
     <?php 
+        include_once("library/inboxNmb.php");
+        include_once("library/getName.php");
+        $name = getName($_SESSION["user"]);
+        // store links in array 
+        $links = array("Home" => "dashboard", "About Us" => "about", "Message Board" => "viewMsgs", "Send Message" => "newMsg");
+        foreach($links as $key => $val){
+            echo "<li class=\"navli\"><a class=\"ul-links\" href=\"index.php?page=$val\">$key</a></li>";
+        }
+        echo "<div class=\"underlinks\"> ";
+        // inbox and logout links
         $con = mysqli_connect("localhost", "idanis", "test", "messages_site") or die("did not connect");
-        // Change the line below when you add session cookies *idy
-        $query = "SELECT * from msg WHERE to_user = 'test'";
-        $result = mysqli_query($con, $query);
-        $row = mysqli_num_rows($result);
-        echo "<a href=\"index.php?page=inbox\">Inbox ($row)</a>";
+        // Get the messages 
+        $number = getNumber($name);
+        echo "<a class=\"unli\" href=\"index.php?page=inbox\">Inbox ($number)</a>
+        <li class=\"ul-links\"><a class=\"unli\" href=\"index.php?page=logout\">Log out</a></li>
+        <div>";
     ?>
-    <a href="index.php?page=logout">Log Out</a>
 
+
+    </ul>
 </nav>

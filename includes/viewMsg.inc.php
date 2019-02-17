@@ -1,3 +1,4 @@
+<?php include("nav.php");?>
 <?php 
     $id = $_REQUEST["id"];
     // echo $id;

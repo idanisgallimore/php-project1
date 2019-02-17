@@ -1,3 +1,4 @@
+<?php include("nav.php");?>
 <h1 class="page-title">Add New Message</h1>
 <!-- //add from - use session cookies  -->
 <form method="get" action="index.php">

@@ -1,4 +1,4 @@
-
+<?php include("nav.php");?>
 <form method="get" action="index.php">
     <?php 
         $from = $_REQUEST['from'];

@@ -1,3 +1,4 @@
+<?php  include("nav.php"); ?>
 <h1 class="page-title">Update Info</h1>
 <!-- //add from - use session cookies  -->
 <?php 

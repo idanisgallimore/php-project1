@@ -1,4 +1,6 @@
+<?php include("nav.php");?>
 <?php 
+ 
     $con = mysqli_connect("localhost", "idanis", "test", "messages_site");
     $query = "SELECT * from msg";
     $result = mysqli_query($con, $query);
