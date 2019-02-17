@@ -42,7 +42,17 @@ body{
     width: 200px;
     margin-bottom: 20px;
 }
-
+footer{
+	background-color: #A5D6A7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	width: 100vw;
+	margin-top: 50px;
+	letter-spacing: 1px;
+	font-size: 16px;
+}
 
 /* Mobile stuff */
 @media only screen and (max-width: 530px) {
@@ -83,6 +93,25 @@ body{
 		margin-left: 20px; 
 
 	}
+	.btn-long{
+		height: 30px;
+		width: 90%;
+		font-size: 20px; 
+
+	}
+	.link-yes{
+		color: white;
+	}
+	.link-no{
+		color: #ad1457;
+	}
+	.btn-no{
+		border: #ad1457 1px solid; 
+	}
+	.btn-no:hover{
+		cursor: pointer;
+		background-color: #F8BBD0;
+	}
 	.btn-yes{
 		background-color: #ad1457;
 		color: white;
@@ -101,6 +130,7 @@ body{
 		justify-content: center;
 		margin: auto;
 		background-color: #fce4ec;
+		/* margin-bottom: 230px; */
 		padding-top: 30px;
 	}.signup-cont{
 		height: 250px;
@@ -191,7 +221,7 @@ body{
 	}
 	nav{
 		display: none;
-		height: 50vh;
+		height: 55vh;
 		width: 50vw;
 		z-index: 1;
 		position: absolute;
@@ -219,6 +249,62 @@ body{
 	}
 	a{
 		text-decoration: none;
+	}
+	/* Pages with feedback messages */
+	.msg-container{
+		width: 100vw;
+		height: 50vh;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		font-size: 30px; 
+	}
+	.page-link{
+		color: #607D8B;
+		border-bottom: #607D8B solid 1px;
+		font-size: 20px; 
+		margin-top: 20px; 
+	}
+	/* landing page */
+	.landing-container2{
+		background-color: #00BCD4;
+		background-image: url("bck1.png");
+		width: 100vw;
+		height: 56vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center; 
+		align-items: flex-start;
+	}
+	.landing-container1{
+		height: 45vh;
+	}
+	.landing-sub-cont{
+		display: flex; 
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.page-sub-title{
+		font-size: 20px; 
+		margin-top: 30px;
+		margin-bottom: 10px; 
+		font-weight: bolder; 
+	}
+	.lan-btn{
+		margin-bottom: 20px;
+	}
+	.blt-pnts{
+		display: flex; 
+		flex-direction: row;
+		font-size: 27px; 
+		color: white;
+		margin-bottom: 50px; 
+	}
+	.landing-icon{
+		margin-left: 20px;
+		margin-right: 20px; 
 	}
 }
    

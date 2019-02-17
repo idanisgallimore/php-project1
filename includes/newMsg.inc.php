@@ -22,3 +22,4 @@
     <input class="btn btn-yes" type="submit" value="submit"/>
 
 </form>
+<?php include("footer.php");?>

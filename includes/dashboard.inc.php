@@ -26,3 +26,4 @@
         }
     echo "</div>";
 ?>
+<?php include("footer.php");?>

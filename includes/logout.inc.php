@@ -1,7 +1,7 @@
 <?php 
         session_unset();
         session_destroy();
-        header('Location: index.php?page=loginPage');
+        header('Location: index.php?page=main');
         // exit();
 
 ?>

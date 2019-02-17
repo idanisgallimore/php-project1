@@ -1,6 +1,5 @@
 <?php 
     $id = $_REQUEST["id"];
-    // echo $id;
 
     $con = mysqli_connect("localhost", "idanis", "test", "messages_site");
     $query = "SELECT * from msg WHERE msgid = '$id'";
