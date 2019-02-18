@@ -3,9 +3,12 @@
 <!-- //add from - use session cookies  -->
 <?php 
     include_once("library/getName.php");
+    // Connection to Db
+    require_once("library/connection.php");
+    $con = connectToDb();
+    //-------------------
     $name = getName($_SESSION["user"]);
     $email = $_SESSION["user"];
-    $con = mysqli_connect("localhost", "idanis", "test", "messages_site") or die("did not connect");
     // $query = "INSERT INTO msg(from_user, to_user, message, date) VALUES('$name', '$toUser', '$message', '$date')";
     $query = "SELECT * from ms_users WHERE email = '$email'";
     $result = mysqli_query($con, $query);

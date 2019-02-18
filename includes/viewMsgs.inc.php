@@ -1,7 +1,17 @@
-<?php include("nav.php");?>
+<?php include("nav.php");?> 
+<h1 class="page-title">Message Board</h1>
+<div class="search-container">
+    <form class="search" method="get" action="index.php">
+        <input type="text" class="search-field" name="search" placeholder="Search Messages"/>
+        <input type="hidden" name="page" value="search"/>
+        <button type="submit" class="btn btn-yes btn-small"><i class="fas fa-search"></i></button>
+    </form>
+</div>
 <?php 
- 
-    $con = mysqli_connect("localhost", "idanis", "test", "messages_site");
+    // Connection to Db
+    require_once("library/connection.php");
+    $con = connectToDb();
+    //-------------------
     $query = "SELECT * from msg";
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_assoc($result)){
@@ -12,11 +22,9 @@
         
         echo "<div class=\"msg-cont\">
             <h3 class=\"msg-author\">From: $from</h3>
-            <p class=\"msg-text\">$msg</p>
-            <h4 class=\"msg-text\">$day</h4>
-            <a class=\"page-link\" href=\"index.php?page=viewMsg&id=$id\">View message</a>
+            <h4 class=\"msg-text msg-date\">Date: $day</h4>
+            <p class=\"msg-text\">Message: $msg</p>
+            <a class=\"msg-link\" href=\"index.php?page=viewMsg&id=$id\">View message</a>
         </div>";
     }
 ?>
-<a href="index.php?page=main">main </a>
-<a href="index.php?page=newMsg">New Message</a>

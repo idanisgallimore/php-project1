@@ -2,9 +2,12 @@
     include("nav.php");
     include_once("library/inboxNmb.php");
     include_once("library/getName.php");
+    // Connection to Db
+    require_once("library/connection.php");
+    $con = connectToDb();
+    //-------------------
     $user = $_SESSION["user"];
     $name = ucwords(getName($user));
-    $con = mysqli_connect("localhost", "idanis", "test", "messages_site") or die("did not connect");
     // the page title
     echo "<h1 class=\"page-title\">Welcome $name!!!</h1>";
 

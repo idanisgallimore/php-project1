@@ -1,6 +1,9 @@
 <?php 
+// Connection to Db
+require_once("library/connection.php");
+$con = connectToDb();
+//-------------------
     $id = $_REQUEST['id'];
-    $con = mysqli_connect("localhost", "idanis", "test", "messages_site") or die("did not connect");
     $query = "DELETE  from msg WHERE msgid = '$id'";
     $result = mysqli_query($con, $query);
     if($result){

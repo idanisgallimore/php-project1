@@ -1,8 +1,9 @@
 <?php 
+    // Connection to Db
+    require_once("library/connection.php");
+    $con = connectToDb();
+//-------------------
     $user = $_SESSION["user"];
-    // Idanis - Change line and add siteground stuff
-    $con = mysqli_connect("localhost", "idanis", "test", "messages_site") or die("did not connect");
-    // --------------------------------------------------
     $query = "DELETE from ms_users WHERE email = '$user'";
     $result = mysqli_query($con, $query);
     if($result){

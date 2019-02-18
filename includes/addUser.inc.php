@@ -1,4 +1,8 @@
 <?php 
+// Connection to Db
+require_once("library/connection.php");
+$con = connectToDb();
+//-------------------
 $name = $_REQUEST['name'];
 $email = $_REQUEST['email'];
 $password = $_REQUEST['password'];
@@ -15,7 +19,6 @@ if(strlen($password) < 5){
     $badUser = 1;
 }
 // ensure that user does not exist in the db 
-$con = mysqli_connect("localhost", "idanis", "test", "messages_site") or die("did not connect");
 // $query = "INSERT INTO msg(from_user, to_user, message, date) VALUES('$fromUser', '$toUser', '$message', '$date')";
 $query = "SELECT * from ms_users WHERE email = '$email'";
 $result = mysqli_query($con, $query);
@@ -29,6 +32,7 @@ if(!$badUser == 1){
     $query = "INSERT INTO ms_users(name, email, password) VALUES('$name', '$email', '$password')";
     $result = mysqli_query($con, $query);
     if($result){
+        $_SESSION["user"] = $email;
         header('Location: index.php?page=dashboard');
     }
 }

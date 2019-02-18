@@ -1,26 +1,43 @@
 <?php include("nav.php");?>
+<h1 class="page-title">Messages to You</h1>
 <?php 
     include_once("library/getName.php");
+    // Connection to Db
+    require_once("library/connection.php");
+    $con = connectToDb();
+    //-------------------
     $user = getName($_SESSION["user"]);
-    $con = mysqli_connect("localhost", "idanis", "test", "messages_site") or die("did not connect");
 // Get the emails 
     $query = "SELECT * from msg WHERE to_user = '$user'";
     $result = mysqli_query($con, $query);
-    while($row = mysqli_fetch_assoc($result)){
-        $msg = $row['message'];
-        $day = $row['date'];
-        $from = $row['from_user'];
-        $toUser = $row['to_user'];
-        $id = $row['msgid'];
-    
-        echo "<div class=\"msg-cont\">
-            <h3 class=\"msg-author\">From: $from</h3>
-            <h5 class=\"msg-rec\">To: $toUser</h5>
-            <p class=\"msg-text\">$msg</p>
-            <h4 class=\"msg-text\">$day</h4>
-            <a class=\"page-link action-link\" href=\"index.php?page=deleteMsg&id=$id\">Delete message</a>
-            <a class=\"page-link\" href=\"index.php?page=inboxMsg&id=$id\">View message</a>
+    $number = mysqli_num_rows($result);
+    if($number > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            $msg = $row['message'];
+            $day = $row['date'];
+            $from = $row['from_user'];
+            $toUser = $row['to_user'];
+            $id = $row['msgid'];
+        
+            echo "<div class=\"msg-cont\">
+                <h3 class=\"msg-author\">From: $from</h3>
+                <h4 class=\"msg-text msg-date\">Date: $day</h4>
+                <p class=\"msg-text\">Message: $msg</p>
+                <a class=\"page-link\" href=\"index.php?page=inboxMsg&id=$id\">View message</a>
+            </div>";
+        }
+    }   else{
+        echo "<div class=\"msg-container fail-msg-container\">
+            <h2 class =\"fail-msg msg\">No messages for you <i class=\"far fa-frown\"></i></h2>
+            <a href=\"index.php?page=dashboard\" class=\"page-link\">Back to Dashboard</a>
         </div>";
     }
 
 ?>
+
+<!-- echo "<div class=\"msg-cont\">
+            <h3 class=\"msg-author\">From: $from</h3>
+            <h4 class=\"msg-text msg-date\">Date: $day</h4>
+            <p class=\"msg-text\">Message: $msg</p>
+            <a class=\"page-link\" href=\"index.php?page=respondMsg&from=$from\">Respond</a>
+        </div>"; -->

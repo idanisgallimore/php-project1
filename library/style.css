@@ -35,13 +35,6 @@ body{
 	background-color: white;
 } */
 
-/* View Messages page */
-.msg-cont{
-    border: solid 5px black;
-    height: 200px; 
-    width: 200px;
-    margin-bottom: 20px;
-}
 footer{
 	background-color: #A5D6A7;
 	display: flex;
@@ -306,5 +299,86 @@ footer{
 		margin-left: 20px;
 		margin-right: 20px; 
 	}
+	/* Search bar */
+	.search{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin: auto;
+		width: 70vw;
+	}
+	.search-field{
+		border: 0;
+		width: 80%;
+		border-bottom: black 2px solid;
+	}
+	.search-field:focus{
+		outline: 0;
+	}
+	.search-container{
+		width: 100vw;
+		height: 20vh;
+		display: flex;
+		justify-content: center;
+	}
+	/* Message Board / Inbox */
+	/* View Messages page */
+.msg-cont{
+	border-bottom: solid 5px black;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	min-height: 200px;
+    width: 90vw;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+.msg-author{
+	color: #1E8449;
+	font-size: 20px;
+	
+}
+.msg-date{
+	color: #F1C40F;
+	margin-bottom: 20px;
+}
+.msg-text{
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.msg-link{
+	color: #808B96;
+	border-bottom: 1px solid #808B96;
+}
+/* send messages */
+.msg-send{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.select-user, .form-area{
+	width: 50%;
+}
+.select-user{
+	height: 50px;
+	border: black solid 1px;
+	font-size: 20px;
+	margin-bottom: 30px; 
+	margin-top: 50px;
+}
+.select-user:focus{
+	outline: 0;
+}
+.form-area:focus{
+	outline: 0;
+}
+.form-area{
+	border: black solid 1px;
+	height: 200px;
+	resize: none;
+	margin-bottom: 20px;
+}
 }
    

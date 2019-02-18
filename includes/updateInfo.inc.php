@@ -13,8 +13,10 @@
             <a href=\"index.php?page=updateUser\" class=\"page-link\">Home</a>
         </div>";
     }
-
-    $con = mysqli_connect("localhost", "idanis", "test", "messages_site") or die("did not connect");
+    // Connection to Db
+    require_once("library/connection.php");
+    $con = connectToDb();
+    //-------------------
     $query = "SELECT email from ms_users WHERE email = '$email'";
     $result = mysqli_query($con, $query);
     $row = mysqli_fetch_assoc($result);

@@ -9,6 +9,10 @@
     <?php 
         include_once("library/inboxNmb.php");
         include_once("library/getName.php");
+        // Connection to Db
+        require_once("library/connection.php");
+        $con = connectToDb();
+        //-------------------
         $name = getName($_SESSION["user"]);
         // store links in array 
         $links = array("Home" => "dashboard", "About Us" => "about", "Message Board" => "viewMsgs", "Send Message" => "newMsg");
@@ -17,7 +21,6 @@
         }
         echo "<div class=\"underlinks\"> ";
         // inbox and logout links
-        $con = mysqli_connect("localhost", "idanis", "test", "messages_site") or die("did not connect");
         // Get the messages 
         $number = getNumber($name);
         echo "<a class=\"unli\" href=\"index.php?page=inbox\">Inbox ($number)</a>

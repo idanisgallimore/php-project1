@@ -1,7 +1,10 @@
 <?php 
+    // Connection to Db
+    require_once("library/connection.php");
+    $con = connectToDb();
+    //-------------------
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $con = mysqli_connect("localhost", "idanis", "test", "messages_site") or die("did not connect");
     // $query = "INSERT INTO msg(from_user, to_user, message, date) VALUES('$fromUser', '$toUser', '$message', '$date')";
     $query = "SELECT email, password, name from ms_users WHERE email = '$email' and password = '$password'";
     $result = mysqli_query($con, $query);
