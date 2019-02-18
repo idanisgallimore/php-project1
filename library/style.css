@@ -380,5 +380,65 @@ footer{
 	resize: none;
 	margin-bottom: 20px;
 }
+/* About us page */
+.au-jumbo{
+	margin-top: 50px;
+	margin-bottom: 50px; 
+	display: flex;
+	width: 100vw;
+	height: 50vh;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+.jum-sec{
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50%;
+}
+.jum1, .jum4{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.jum1{
+	background-image: url("jum1.jpg");
+}
+.jum4{
+	background-image: url("jum2.jpg");
+}
+.jum-text{
+	color: white;
+}
+.jum2{
+	background-color: #1E8449;
+}
+.jum3{
+	background-color: #FFB300;
+}
+.about{
+	width: 80vw;
+	margin: auto;
+	padding-bottom: 50px; 
+}
+.about-text{
+	text-align: center;
+	line-height: 30px;
+	font-weight: lighter;
+}
+/* Account page */
+.link-updateUser{
+	background-color: #66BB6A;
+}
+.link-deleteAcc{
+	background-color: #00BCD4;
+}
+.dlt-container{
+	display: flex;
+	flex-direction: row; 
+	width: 100vw;
+}
 }
    

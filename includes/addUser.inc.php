@@ -2,10 +2,10 @@
 // Connection to Db
 require_once("library/connection.php");
 $con = connectToDb();
-//-------------------
-$name = $_REQUEST['name'];
-$email = $_REQUEST['email'];
-$password = $_REQUEST['password'];
+//-------------------0
+$name = htmlspecialchars($_REQUEST['name']);
+$email = htmlspecialchars($_REQUEST['email']);
+$password = htmlspecialchars($_REQUEST['password']);
 
 // echo strlen($password);
 // echo $name." ". $email." ".$password;

@@ -3,8 +3,8 @@
     require_once("library/connection.php");
     $con = connectToDb();
     //-------------------
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = htmlspecialchars($_POST['email']);
+    $password = htmlspecialchars($_POST['password']);
     // $query = "INSERT INTO msg(from_user, to_user, message, date) VALUES('$fromUser', '$toUser', '$message', '$date')";
     $query = "SELECT email, password, name from ms_users WHERE email = '$email' and password = '$password'";
     $result = mysqli_query($con, $query);

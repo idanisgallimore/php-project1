@@ -6,10 +6,10 @@
     require_once("library/connection.php");
     $con = connectToDb();
     //-------------------
-    $name = getName($_SESSION["user"]);
-    $toUser = $_GET['user'];
-    $message = $_GET['message'];
-    $date = $_GET['date'];
+    $name = htmlspecialchars(getName($_SESSION["user"]));
+    $toUser = htmlspecialchars($_GET['user']);
+    $message = htmlspecialchars($_GET['message']);
+    $date = htmlspecialchars($_GET['date']);
     
     $query = "INSERT INTO msg(from_user, to_user, message, date) VALUES('$name', '$toUser', '$message', '$date')";
     $result = mysqli_query($con, $query);

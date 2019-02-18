@@ -5,7 +5,7 @@
     require_once("library/connection.php");
     $con = connectToDb();
     //-------------------
-    $search = $_GET['search'];
+    $search = htmlspecialchars($_GET['search']);
     // echo $search;
     if(get_magic_quotes_gpc()){
         $search = stripslashes($search);
