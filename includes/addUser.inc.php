@@ -14,8 +14,21 @@ $badUser = 0;
 if(strlen($password) < 5){
     header('Location: index.php?page=password');
     $badUser = 1;
-}elseif($name === "" || $email === "" || $password === ""){
+}elseif($name === "" || $password === ""){
     header('Location: index.php?page=blank');   
+    $badUser = 1;
+}
+if(empty($email)){
+    echo "<div class=\"msg-container fail-msg-container\">
+    <h2 class =\"fail-msg msg\">Email is blank. Please enter email.</i></h2>
+    <a href=\"index.php?page=signup\" class=\"page-link\">Go back</a>
+    </div>";
+    $badUser = 1;
+}elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    echo "<div class=\"msg-container fail-msg-container\">
+    <h2 class =\"fail-msg msg\">Must enter a valid email</i></h2>
+    <a href=\"index.php?page=signup\" class=\"page-link\">Go back</a>
+    </div>";
     $badUser = 1;
 }
 // ensure that user does not exist in the db 

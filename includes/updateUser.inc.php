@@ -17,16 +17,27 @@
             $email = $row['email'];
             $name = $row['name'];
             $password = $row['password'];
-        }
 
-        echo "<form method=\"get\" action=\"index.php\">
-        <input class=\"form-input\" type=\"text\" name=\"name\" value=\"$name\" placeholder=\"Update Name\"/>
-        <input class=\"form-input\" type=\"text\" name=\"email\" value=\"$email\" placeholder=\"Update Email\"/>
-        <input class=\"form-input\" type=\"password\" name=\"password\" value=\"$password\" placeholder=\"Update password\"/>
-        <input class=\"form-input\" type=\"password\" name=\"password2\" placeholder=\"Confirm password\"/>
-        <input type=\"hidden\"  name=\"page\" value=\"updateInfo\"/>
-        <input class=\"btn btn-yes\" type=\"submit\" value=\"submit\"/>
-    </form>";
+            echo "
+                <div class=\"info-cont\">
+                    <h3 class=\"page-sub-title\">Name:</h3>
+                    <div class=\"info-data-cont\">
+                        <h3 class=\"data\">$name</h3>
+                        <button class=\"btn btn-info btn-yes btn-small\"><a class=\"unli a-info\" href=\"index.php?page=changeName\">Change</a></button>
+                    </div>
+                    <h3 class=\"page-sub-title\">Email:</h3>
+                    <div class=\"info-data-cont\">
+                        <h3 class=\"data\">$email</h3>
+                        <button class=\"btn btn-info btn-yes btn-small\"><a class=\"unli a-info\" href=\"index.php?page=changeEmail\">Change</a></button>
+
+                    </div>
+
+                    <div class=\"info-data-cont\">
+                        <button class=\"btn btn-yes btn-long\"><a class=\"unli a-info\" href=\"index.php?page=changePassword\">Change Password</a></button>
+                    </div>
+                
+                </div>";
+        }
     }
 
 ?>
