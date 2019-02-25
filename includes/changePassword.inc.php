@@ -1,5 +1,5 @@
 <?php  include("nav.php"); ?>
-<h1 class="page-title">Change Name</h1>
+<h1 class="page-title">Change Password</h1>
 
 <?php 
     require_once("library/connection.php");
@@ -11,7 +11,7 @@
     if($result){
         while($row = mysqli_fetch_assoc($result)){
             $password = $row['password'];
-            echo "<form method=\"get\" action=\"index.php\">
+            echo "<form class=\"login-container container\" method=\"get\" action=\"index.php\">
                 <input class=\"form-input\" type=\"password\" name=\"password1\" value=\"$password\" placeholder=\"Update password\"/>
                 <input class=\"form-input\" type=\"password\" name=\"password2\" placeholder=\"Confirm password\"/>
                 <input type=\"hidden\"  name=\"page\" value=\"newPassword\"/>

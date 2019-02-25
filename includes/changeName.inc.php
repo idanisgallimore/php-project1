@@ -12,7 +12,7 @@
     if($result){
         while($row = mysqli_fetch_assoc($result)){
             $name = $row['name'];
-            echo "<form method=\"get\" action=\"index.php\">
+            echo "<form  class=\"login-container container\"  method=\"get\" action=\"index.php\">
                 <input class=\"form-input\" type=\"text\" name=\"name\" value=\"$name\" placeholder=\"Update Name\"/>
                 <input type=\"hidden\"  name=\"page\" value=\"newName\"/>
                 <input class=\"btn btn-yes btn-small\" type=\"submit\" value=\"submit\"/>

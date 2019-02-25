@@ -3,7 +3,7 @@
 
 <?php 
     $email = $_SESSION["user"];
-    echo "<form method=\"get\" action=\"index.php\">
+    echo "<form class=\"login-container container\" method=\"get\" action=\"index.php\">
         <input class=\"form-input\" type=\"text\" name=\"email1\" value=\"$email\" placeholder=\"Update Email\"/>
         <input type=\"hidden\"  name=\"page\" value=\"newEmail\"/>
         <input class=\"btn btn-yes btn-small\" type=\"submit\" value=\"submit\"/>
